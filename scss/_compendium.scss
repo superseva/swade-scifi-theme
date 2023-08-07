@@ -1,0 +1,67 @@
+.window-content {
+	background-image: url("../assets/layout/leather.webp");
+	padding: 0;
+}
+
+.window-content .header.title {
+	color: var(--heading-color-cream);
+	background-image: url("../assets/layout/leather-strip.webp");
+	background-size: contain;
+    background-repeat: no-repeat;
+	text-align: left;
+    padding-left: 1rem;
+	margin-bottom: 2px;
+	margin-top: 2px;
+	box-shadow: 0 4px 2px -2px rgba(0,0,0, 0.7);
+}
+
+.window-content .content {
+	background-image: url("../assets/layout/light-parchment-paper-no-border-seamless.webp");	
+	background-size: 100% 100%; 
+	padding: 1rem 1rem 1rem 1rem;
+	box-shadow: 3px 3px 10px 1px #333;
+	margin: 1rem;
+	height: auto;
+    font-size: 16px;
+}
+
+.window-content div.header input {
+	background: antiquewhite;
+    box-shadow: inset 0px 0px 3px rgb(0, 0, 0);
+	margin-right: 1em;
+	margin-top: .5em;
+}
+
+.window-content div.header.search {
+    padding-top: 0.1rem;
+    padding-right: 0.1rem;
+}
+
+.window-content .content .category h2.category-header {
+	background-image: url("../assets/layout/h1-background.webp");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: max-content;
+	padding: 0 1em;
+	min-width: 11.4em;
+	height: 2.2em;
+	line-height: 2em;
+	color: var(--heading-color-cream);
+	margin: auto;
+	text-align: center;
+}  
+
+.window-content .content .journal .journal-heading,
+.window-content .content .category h3.group-header {
+	font-family: dead-saloon, serif;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: .1ch;
+	color: var(--heading-color-light);
+	font-size: 1.6em;
+	border-bottom: .05em solid currentColor;
+	padding-bottom: .2em;
+	margin-bottom: .2em;
+	margin-top: .7em;
+}

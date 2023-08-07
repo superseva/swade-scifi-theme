@@ -1,0 +1,386 @@
+
+img {
+	border: none;
+	shape-margin: 1em;
+}
+
+.float-right {
+	margin-right: -2em;
+	margin-left: .5em;
+	float: right;
+}
+
+.float-left {
+	margin-left: -2em;
+	margin-right: .5em;
+	float: left;
+}
+
+.float-left:not(img),
+.float-right:not(img) {
+	width: calc(50% + 2em);
+}
+
+/* Text Styles */
+
+p.hanging-indent {
+	padding-left: 1ch;
+	text-indent: -1ch;
+}
+
+.left {
+	text-align: left;
+}
+.right {
+	text-align: right;
+}
+.centered {
+	text-align: center;
+}
+
+.western {
+	font-family: dead-saloon;
+	font-size: .9em;
+	color: var(--heading-color-dark);
+}
+
+.no-display {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.read-aloud {
+	color: var(--heading-color-dark);
+	font-style: italic;
+	margin-left: 2ch;
+}
+
+/* Icon Styles */ 
+
+.gun-icon::before {
+	content: "\004C  ";
+	font-family: western-bullets;
+}
+.star-icon::before {
+	content: url("../assets/layout/badge-star.svg");
+	display: inline-block;
+	width: 2ch;
+	position: relative;
+	top: .35em;
+	margin-right: .5ch;
+}
+
+/* Chapter Headings */
+
+.chapter-heading {
+	font-size: .7em;
+	display: flex;
+	position: relative;
+	background-image: url("../assets/layout/chapter-title-background.webp");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 54em;
+	margin: -1em auto -1em auto;
+	height: 32em;
+}
+
+.chapter-heading h1 {
+	font-size: 4.7em;
+	margin: 0;
+	margin-bottom: .3em;
+	line-height: 1em;
+	width: 100%;
+	align-self: center;
+	color: var(--heading-color-dark);
+}
+.chapter-heading h1::before,
+.chapter-heading h1::after {
+	content: none;
+}
+
+.chapter-heading h1.smaller {
+	font-size: 4em;
+}
+.chapter-heading h1.smaller-2 {
+	font-size: 3em;
+}
+
+.chapter-heading .chapter-number {
+	position: absolute;
+	right: 1.5em;
+	top: .7em;
+	text-transform: uppercase;
+	font-family: dead-saloon, serif;
+	font-size: 3.4em;
+	transform: rotate(9.5deg);
+	color: black;
+}
+.chapter-heading .chapter-number .chapter-label {
+	position: absolute;
+	top: -.7em;
+	left: 50%;
+	content: "Chapter";
+	text-transform: uppercase;
+	font-size: .5em;
+	font-weight: bold;
+	letter-spacing: .25ch;
+	transform: translate(-50%);
+	word-break: keep-all;
+}
+
+.chapter-heading .subtitle {
+	font-family: "ChickenScratch";
+	font-size: 1.1em;
+	position: absolute;
+	bottom: 4em;
+	right: 5.2em;
+	text-align: right;
+	color: var(--heading-color-light);
+	text-transform: uppercase;
+}
+
+/* Headings */
+
+h1,
+h2 {
+	border: none;
+}
+
+h1 {
+	font-family: dead-saloon, serif;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: .1ch;
+	font-size: 2.1em;
+}
+h1.wide {
+	color: var(--heading-color-dark);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1em;
+	margin-bottom: .5em;
+}
+h1.wide::before, h1.wide::after {
+	content: " ";
+	background-image: url(../assets/layout/swade-scifi-theme-h1-decoration.svg);
+	background-repeat: no-repeat;
+	background-position-y: .3em;
+	display: inline-block;
+	min-width: 4em;
+	height: 1.2em;
+	color: currentColor;
+}
+h1.wide::before {
+	margin-right: 1ch;
+}
+h1.wide::after {
+	transform: scaleX(-1);
+	margin-left: 1ch;
+}
+
+h1.narrow {
+	background-image: url("../assets/layout/h1-background.webp");
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: max-content;
+	padding: 0 1em;
+	min-width: 11.4em;
+	height: 2.2em;
+	line-height: 2em;
+	color: var(--heading-color-cream);
+	margin: auto;
+}
+
+h2 {
+	font-family: dead-saloon, serif;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: .1ch;
+	color: var(--heading-color-light);
+	font-size: 1.6em;
+	border-bottom: .05em solid currentColor;
+	padding-bottom: .2em;
+	margin-bottom: .2em;
+	margin-top: .7em;
+}
+h2.no-underline {
+	border-bottom: none;
+	padding-bottom: none;
+}
+
+h3 {
+	font-family: dead-saloon, serif;
+	text-transform: uppercase;
+	letter-spacing: .1ch;
+	color: var(--heading-color-light);
+	font-size: 1.25em;
+	margin-bottom: 0;
+	margin-top: .7em;
+	border: initial;
+}
+
+/* Lists */
+
+ul, ol {
+	padding-left: 1.5ch;
+	margin-top: 0;
+}
+ul {
+	list-style: none;
+}
+li {
+	padding: 0;
+	padding-left: 1ch;
+}
+li::marker {
+	font-size: 1em;
+	content: "\25A0";
+	color: var(--heading-color-light);
+}
+li ul li {
+	text-indent: 2ch;
+}
+li ul li::marker {
+	content: "\2022";
+}
+
+li.gun-icon::before,
+li.star-icon::before {
+	content: none;
+}
+ul li.gun-icon::marker {
+	content: "\004C";
+	font-family: western-bullets;
+}
+ul li.star-icon {
+	position: relative;
+}
+ul li.star-icon::marker {
+	content: initial;
+}
+ul li.star-icon::before {
+	content: url("../assets/layout/badge-star.svg");
+	display: inline-block;
+	width: 2ch;
+	position: absolute;
+	top: .35em;
+	margin-right: .5ch;
+	left: -1.7ch;
+}
+
+.list-heading {
+	font-size: .9em;
+	text-transform: uppercase;
+	font-family: "Roboto Slab";
+	font-weight: bold;
+}
+
+/* Tables */
+
+table {
+	background: none;
+	border: none;
+}
+table.wide {
+	font-size: .8em;
+	margin-left: -2.5em;
+	margin-right: -2.5em;
+	width: calc(100% + 5em);
+}
+tr:nth-of-type(odd) {
+	background-color: none;
+}
+tr:nth-of-type(even) {
+	background-color: #e7d4b8;
+}
+.table-note td {
+	padding: 0em .3em .6em 2ch;
+}
+td:not([colspan]) {
+	max-width: 20ch;
+}
+th.dark {
+	color: white;
+	background-color: var(--heading-color-dark);
+}
+th h2 {
+	font-size: 1em;
+	border-bottom: none;
+	color: white;
+	background: linear-gradient(to left, #240a0d, 12.5%, #8c2928, 87.5%, #240a0d);
+	margin: -.25em 0;
+	padding: .2em 0 .3em 0;
+	line-height: 1.5em;
+	height: 100%;
+}
+
+/* Blockquote */
+
+blockquote {
+	font-family: "Western Bang Bang";
+	border: none;
+	width: 60%;
+	margin: auto;
+}
+blockquote p {
+	font-size: 1.5em;
+	text-transform: uppercase;
+	margin: 0;
+	text-align: center;
+}
+blockquote p:before {
+	content: open-quote;
+}
+blockquote p:after {
+	content: close-quote;
+}
+blockquote cite {
+	text-align: right;
+	font-size: 1.2em;
+	display: block;
+}
+blockquote cite:before {
+	content: "\2014";
+}
+
+/* Entity Links */
+
+a.entity-link, a.content-link, a.inline-roll {
+	background: initial;
+	border: initial;
+	white-space: initial;
+	word-break: initial;
+	padding: initial;
+	margin: initial;
+
+	color: var(--heading-color-dark);
+	text-decoration: underline;
+}
+a.entity-link.broken, a.content-link.broken, a.inline-roll.broken {
+	color: inherit;
+	text-decoration: inherit;
+	cursor: text;
+}
+a.entity-link:hover, a.content-link:hover, a.inline-roll:hover {
+	text-shadow: 0 0 0.2em var(--heading-color-dark);
+}
+a.entity-link.broken:hover, a.content-link.broken:hover, a.inline-roll.broken:hover {
+	text-shadow: none;
+}
+a.entity-link i.fas, a.content-link i.fas, a.inline-roll i.fas {
+	display: none;
+}
+
+figure.chapter-number {
+    margin: 1em;
+}

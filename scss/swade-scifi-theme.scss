@@ -1,0 +1,41 @@
+@import "fonts";
+@import "color";
+// @import "mixins";
+// @import "polygons";
+
+
+$name: "swade-scifi-theme";
+
+.journal-sheet.#{$name}-wrapper {
+	@import "wrapper";
+}
+
+.journal-sheet .#{$name}-core {
+	padding: 1em 4em 1em 4em;
+}
+
+.#{$name}-core {	
+	font-size: 12pt;
+	font-family: "Book Antiqua";	
+
+
+	@import "trade-dress";
+	@import "core";
+}
+
+.item .#{$name}-core {
+	padding: 1em;
+}
+
+.chat-message .#{$name}-core {
+	padding: .3em;
+}
+
+.#{$name}-compendium {
+	@import "compendium";
+}
+
+.#{$name}-sheet {
+	background-image: url("../assets/layout/leather.webp");
+	@import "character-sheet";
+}

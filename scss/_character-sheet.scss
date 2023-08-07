@@ -1,0 +1,254 @@
+.sheet-body {	
+	background-image: url("../assets/layout/light-parchment-paper.webp");
+	background-size: 100% 100%;
+	padding: 1em 1.5em;
+}
+
+.limited {
+  .sheet-body {
+    padding: 1.5em 1.75em 0.5em 1.75em;
+  }
+}
+
+.charname-container,
+.conviction-enabled .charname-container {
+	grid-column: 3 / 9;
+}
+
+.gu-1 {
+	display: block;
+	grid-row: 1 / 4;
+	height: 400%;
+	grid-column: 1 / 9;
+	background-image: url("../assets/layout/old-paper.webp");
+	background-size: 100% 100%;
+	margin: -1em;
+	z-index: -1;
+}
+
+.race {
+	grid-column: 3 / 6;
+}
+.archetype {
+	grid-column: 3 / 6;
+}
+.rank {
+	grid-column: 6 / 9;
+}
+.advances {
+	grid-column: 6 / 9;
+}
+
+.tab {
+	padding: 1em 1em 0em 1em;
+}
+
+.window-content {
+	padding: 16px;
+}
+
+.advances input[type=number] {
+	color: var(--heading-color-cream);
+}
+
+.character-detail,
+.character-detail input[type=text],
+.character-detail input[type=number],
+.character-detail label {
+	font-family: var(--section-header-font);
+	color: var(--heading-color-dark);
+	font-size: 1.1em;
+	border: none;
+	text-align: center;
+}
+
+.charname,
+.character-detail input,
+.character-detail label {
+	text-shadow: var(--header-text-shadow);
+}
+.charname {
+	position: relative;
+	left: -8px;
+	font-family: dead-saloon;
+	color: var(--heading-color-dark);
+	padding-left: 1ch;
+	padding-bottom: .3em;
+	text-align: center;
+}
+
+.sheet-header-official div:first-child label {
+	display: flex;
+}
+
+.charname-container:before,
+.charname-container::after {
+	content: url("../assets/layout/swade-scifi-theme-h1-decoration.svg");
+	display: inline-block;
+	width: 10em;
+	align-self: center;
+	margin-right: 1ch;
+	margin-left: 1ch;
+	position: relative;
+	top: .15em;
+	color: currentColor;
+	filter: drop-shadow(var(--header-text-shadow));
+}
+.charname-container::after {
+	transform: scaleX(-1);
+}
+
+input[type].conviction-counter:active,
+input[type].conviction-counter:hover,
+input[type].conviction-counter:focus,
+.character-detail input:active,
+.character-detail input:hover,
+.character-detail input:focus,
+input.charname:active,
+input.charname:hover,
+input.charname:focus {
+	box-shadow: none;
+	border-bottom: dashed 1px var(--heading-color-dark);
+}
+
+.branding {
+	grid-row: 1 / 4;
+	grid-column: 9 / 13;
+	flex-direction: column;
+	margin: -.5em 0em;
+	align-items: center;
+}
+#peg-logo {
+	display: none;
+}
+.branding {
+	background-image: url("../assets/swade-scifi-theme-logo.webp");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100%;
+	min-width: 8em;
+}
+
+:not(.conviction-enabled) .branding {
+	transform: scale(.7);
+}
+
+#conviction {
+	--color-initial: rgba(50, 13, 0, 1);
+    --color-high: rgba(142, 45, 41, 0.7);
+    --color-low: rgba(50, 13, 0, 0);
+}
+.conviction-enabled .branding {
+	grid-row: 1;
+	grid-column: 9 / 13;
+	flex-direction: row;
+	margin: 0;
+	margin-top: -1em;
+	filter: drop-shadow(.1em .1em .2em black);
+}
+
+input[type].conviction-counter {
+	background: none;
+	font-size: 1.5em;
+}
+.conviction-toggle {
+	font-family: var(--section-header-font);
+}
+
+.conviction-enabled #conviction,
+.conviction-enabled .gu-2 {
+	grid-row: 2 / 4;
+	grid-column: 9 / 13;
+	font-family: var(--section-header-font);
+	color: var(--heading-color-dark);
+	margin-left: 0;
+	margin-top: 0;
+}
+.conviction-enabled .gu-2 {
+	display: block;
+	background-image:  url("../assets/layout/ripped_paper.webp");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: -1.2em 1.5em;
+	transform: rotate(3deg);
+	z-index: -1;
+}
+
+.tabs .item {
+	font-family: dead-saloon;
+	color: var(--heading-color-dark);
+	background-image:  url("../assets/layout/h1-background.webp");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: .3em 1ch 0.5em 1ch;
+	box-shadow: none;
+	filter: drop-shadow(0 0 .1em black);
+	border-radius: 5px;
+	font-size: 1.5em;
+	transition: transform 1s, filter .5s;
+	text-shadow: 0 0 .8em var(--heading-color-cream), 0 0 .8em var(--heading-color-cream), 0 0 .8em var(--heading-color-cream);
+}
+.tabs .item.active {
+	filter: drop-shadow(0 0 .3em black);
+	color: var(--heading-color-cream);
+	text-shadow: 0 0 .5em var(--heading-color-dark), 0 0 1em var(--heading-color-dark);
+}
+
+.note-box {
+	grid-template-rows: 2.5em 1fr 2.5em;
+	filter: drop-shadow(0.1em 0.1em .3em #00000066);
+	margin-bottom: .3em;
+}
+
+.note-box::before {
+	content: " ";
+	grid-column: 1;
+	grid-row: 1 / -1;
+	background-image: url("../assets/layout/parchment-sidebar.webp");
+	background-color: var(--note-box-background);
+	background-blend-mode: luminosity;
+	background-size: 100% auto;
+	background-position: top;
+	background-repeat: repeat-y;
+	clip-path: url(#swade-scifi-theme-sidebar-clip);
+	z-index: -1;
+}
+
+.note-box .note-header,
+.note-box .note-footer {
+	background-image: url("../assets/layout/nail-heads.webp"), url("../assets/layout/nail-heads.webp");
+	background-position: calc(0% - 2em), calc(100% + 1.8em);
+	background-size: 4em, 4em;
+	background-repeat: no-repeat;
+	aspect-ratio: initial;
+}
+.note-box .note-main {
+	background-image: none;
+}
+
+.skills {
+	margin-right: .25em;
+}
+.quickaccess {
+	margin-left: .25em;
+}
+
+.description .char-img-container {
+	background-image: url("../assets/layout/paper-grunge.webp");
+	transform: rotate(-1deg);
+}
+
+.description .advances .editor,
+.description .biography .editor {
+	border: 1px dashed var(--heading-color-dark);
+}
+
+.window-header {
+	border: none;
+	color: var(--heading-color-cream);
+	font-family: "Book Antiqua";
+	background-color: #000;
+}

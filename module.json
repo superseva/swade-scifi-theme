@@ -1,0 +1,45 @@
+{
+    "title": "SWADE SCI FI Theme",
+    "id": "swade-scifi-theme",
+    "description": "Sci Fi Theme for SWADE Sheets",
+    "protected": false,
+    "manifest": "",
+    "url": "",
+    "version": "1.0.0",
+    "changelog": "",
+    "bugs": "",
+    "media": [],
+    "scripts": [],
+    "esmodules": [
+      "./scripts/scifi-theme.js"
+    ],
+    "styles": [
+      "./css/swade-scifi-theme.css"
+    ],
+    "packs": [],
+
+    "relationships": {
+      "systems": [
+        {
+          "id": "swade",
+          "type": "system",
+          "manifest": "https://gitlab.com/api/v4/projects/16269883/packages/generic/swade/latest/system.json",
+          "compatibility": {
+            "minimum": "2.0.5",
+            "verified": "3.0.0"
+          }
+        }
+      ]
+    },
+    "authors": [
+      {
+        "name": "HappySteve"
+      }
+    ],
+    "compatibility": {
+      "minimum": "11",
+      "verified": "11",
+      "max":"11"
+    }
+  }
+  

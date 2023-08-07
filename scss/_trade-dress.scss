@@ -1,0 +1,65 @@
+/* Sidebar */
+
+aside.sidebar {
+	padding: 2em 1em;
+	position: relative;
+	background-image: url("../assets/layout/parchment-paper.webp");
+	background-color: var(--ghostly-white);
+	background-blend-mode: overlay;
+	background-size: 100% 100%;
+	clip-path: url(#swade-scifi-theme-sidebar-clip);
+	text-shadow: 0 0 0.5em white;
+}
+
+aside.sidebar::before,
+aside.sidebar::after {
+	content: " ";
+	width: 100%;
+	height: 2em;
+	position: absolute;
+	left: 0;
+	background-image: url("../assets/layout/nail-heads.webp"), url("../assets/layout/nail-heads.webp");
+	background-position: calc(0% - 2em), calc(100% + 1.8em);
+	background-size: 4em, 4em;
+	background-repeat: no-repeat;
+}
+aside.sidebar::before {
+	top: 0px;
+}
+aside.sidebar::after {
+	bottom: 0px;
+}
+
+.sidebar h1 {
+	font-size: 1.6em;
+	display: flex;
+	align-items: center;
+	margin: auto;
+	width: 100%;
+}
+
+.sidebar h1::before, .sidebar h1::after {
+	content: url("../assets/layout/swade-scifi-theme-sidebar-h1-decoration.svg");
+	display: inline-block;
+	width: 3em;
+	position: relative;
+	top: .15em;
+	color: currentColor;
+}
+.sidebar h1::before {
+	margin-right: auto;
+}
+.sidebar h1::after {
+	margin-left: auto;
+	transform: scaleX(-1);
+}
+
+aside.handwriting {
+	background-image: url("../assets/layout/paper-grunge.webp");
+	background-size: 100% 100%;
+	font-family: Jacques;
+	font-size: 1.4em;
+	transform: rotate(-1deg);
+	padding: 1em;
+	margin: 1em auto;
+}

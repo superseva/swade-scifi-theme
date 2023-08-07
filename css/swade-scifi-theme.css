@@ -1,0 +1,1051 @@
+@font-face {
+  font-family: dead-saloon;
+  src: url("../assets/fonts/DeadSaloon-Mod.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: western-bullets;
+  src: url("../assets/fonts/WesternBulletsWF_0.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Book Antiqua";
+  src: url("../assets/fonts/BKANT_0.TTF") format("truetype");
+}
+
+@font-face {
+  font-family: "Book Antiqua";
+  src: url("../assets/fonts/ANTQUAB_0.TTF") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Book Antiqua";
+  src: url("../assets/fonts/ANTQUAI.TTF") format("truetype");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Book Antiqua";
+  src: url("../assets/fonts/ANTQUABI.TTF") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Western Bang Bang";
+  src: url("../assets/fonts/Western Bang Bang.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Jacques;
+  src: url("../assets/fonts/Jacques_Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ChickenScratch";
+  src: url("../assets/fonts/ChickScrAOE.ttf") format("truetype");
+}
+
+@use "sass:color";
+.swade-scifi-theme-wrapper, .swade-scifi-theme-core, .swade-scifi-theme-sheet, .swade-scifi-theme-compendium {
+  --heading-color-dark: #000f32;
+  --heading-color-light: #29588e;
+  --heading-color-cream:  #56e0ff;
+  --content-background-image: none;
+  --section-header-color: var(--heading-color-light);
+  --section-header-size: 1.5em;
+  --section-header-font: dead-saloon, serif;
+  --default-font: "Book Antiqua";
+  --default-font-size: 1.03em;
+  --input-box-shadow: 0 0 5px var(--heading-color-light);
+  --input-text-shadow: 0 0 10px var(--heading-color-light);
+  --header-text-shadow: 0 0 0.2em #ffde9ac4;
+  --color-initial: rgb(0, 31, 50);
+  --color-high: rgba(41, 108, 142, 0.7);
+  --color-low: rgba(50, 13, 0, 0);
+  --note-box-background: #ffffff5e;
+  --ghostly-white: #ffffff4a;
+  --half-black: #00000080;
+  --mostly-black: #000000B3;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper {
+  /* FIXME */
+}
+
+.journal-sheet.swade-scifi-theme-wrapper .journal-sheet-container {
+  background-image: url("../assets/layout/leather.webp");
+  /* background-size: 100% 100%; */
+}
+
+.journal-sheet.swade-scifi-theme-wrapper aside.journal-sidebar .page-ownership i {
+  color: var(--heading-color-cream);
+}
+
+.journal-sheet.swade-scifi-theme-wrapper aside.journal-sidebar .action-buttons button {
+  background-color: var(--half-black);
+  /* rgb(0,0,0, 0.5); */
+  color: var(--heading-color-cream);
+  border-color: var(--heading-color-cream);
+}
+
+.journal-sheet.swade-scifi-theme-wrapper .journal-entry-content {
+  background: inherit;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper .journal-header {
+  margin: inherit;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper .pages-list {
+  background-color: var(--mostly-black);
+  /* rgb(0,0,0, 0.7); */
+  padding: 1em;
+  box-shadow: inset 0 0 30px #000;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper .window-header {
+  border: none;
+  color: var(--heading-color-cream);
+  font-family: "Book Antiqua";
+  background-color: #000;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper .window-header .window-title {
+  visibility: hidden;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper.minimized .window-header .window-title {
+  visibility: visible;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper .window-content {
+  background-image: none;
+  position: relative;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper .journal-entry-pages {
+  background-image: url("../assets/layout/light-parchment-paper.webp");
+  background-size: 100% 100%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  height: calc(100% - 48px);
+  overflow: hidden;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper .window-content .editor-edit {
+  background-color: var(--heading-color-dark);
+  color: var(--heading-color-cream);
+}
+
+.journal-sheet.swade-scifi-theme-wrapper input,
+.journal-sheet.swade-scifi-theme-wrapper button[type=submit],
+.journal-sheet.swade-scifi-theme-wrapper select {
+  color: var(--heading-color-cream);
+  background-size: contain;
+  font-family: dead-saloon;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper input[name="name"],
+.journal-sheet.swade-scifi-theme-wrapper select {
+  font-size: 1.2em;
+  height: 2em;
+  width: 17em;
+  max-width: 48%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  filter: drop-shadow(2px 4px 6px black);
+  border: none;
+  /* position: absolute; */
+  top: .1em;
+  margin: 0;
+  padding: 0 2ch .2em 2ch;
+  background-color: inherit;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper input[name="name"]:focus,
+.journal-sheet.swade-scifi-theme-wrapper select:focus {
+  box-shadow: none;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper input[name="name"] {
+  background-image: url("../assets/layout/leather-strip.webp");
+  left: 0px;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper select {
+  background-image: url("../assets/layout/leather-strip-left.webp");
+  right: 0px;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper select option {
+  background-color: var(--heading-color-dark);
+}
+
+.journal-sheet.swade-scifi-theme-wrapper button[type=submit] {
+  font-size: 1.5em;
+  background-image: url("../assets/layout/h1-background.webp");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 11.4em;
+  height: 2.2em;
+  color: var(--heading-color-cream);
+  margin: auto;
+  border: none;
+  display: block;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper button[type=submit]:focus,
+.journal-sheet.swade-scifi-theme-wrapper button[type=submit]:hover {
+  box-shadow: 0 0 .5em black inset;
+  cursor: pointer;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper .journal-entry-pages .scrollable {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+}
+
+.journal-sheet.swade-scifi-theme-wrapper article img:not(.nopopout) {
+  max-height: 100%;
+}
+
+.journal-sheet .swade-scifi-theme-core {
+  padding: 1em 4em 1em 4em;
+}
+
+.swade-scifi-theme-core {
+  font-size: 12pt;
+  font-family: "Book Antiqua";
+  /* Sidebar */
+  /* Text Styles */
+  /* Icon Styles */
+  /* Chapter Headings */
+  /* Headings */
+  /* Lists */
+  /* Tables */
+  /* Blockquote */
+  /* Entity Links */
+}
+
+.swade-scifi-theme-core aside.sidebar {
+  padding: 2em 1em;
+  position: relative;
+  background-image: url("../assets/layout/parchment-paper.webp");
+  background-color: var(--ghostly-white);
+  background-blend-mode: overlay;
+  background-size: 100% 100%;
+  clip-path: url(#swade-scifi-theme-sidebar-clip);
+  text-shadow: 0 0 0.5em white;
+}
+
+.swade-scifi-theme-core aside.sidebar::before,
+.swade-scifi-theme-core aside.sidebar::after {
+  content: " ";
+  width: 100%;
+  height: 2em;
+  position: absolute;
+  left: 0;
+  background-image: url("../assets/layout/nail-heads.webp"), url("../assets/layout/nail-heads.webp");
+  background-position: calc(0% - 2em), calc(100% + 1.8em);
+  background-size: 4em, 4em;
+  background-repeat: no-repeat;
+}
+
+.swade-scifi-theme-core aside.sidebar::before {
+  top: 0px;
+}
+
+.swade-scifi-theme-core aside.sidebar::after {
+  bottom: 0px;
+}
+
+.swade-scifi-theme-core .sidebar h1 {
+  font-size: 1.6em;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+}
+
+.swade-scifi-theme-core .sidebar h1::before, .swade-scifi-theme-core .sidebar h1::after {
+  content: url("../assets/layout/swade-scifi-theme-sidebar-h1-decoration.svg");
+  display: inline-block;
+  width: 3em;
+  position: relative;
+  top: .15em;
+  color: currentColor;
+}
+
+.swade-scifi-theme-core .sidebar h1::before {
+  margin-right: auto;
+}
+
+.swade-scifi-theme-core .sidebar h1::after {
+  margin-left: auto;
+  transform: scaleX(-1);
+}
+
+.swade-scifi-theme-core aside.handwriting {
+  background-image: url("../assets/layout/paper-grunge.webp");
+  background-size: 100% 100%;
+  font-family: Jacques;
+  font-size: 1.4em;
+  transform: rotate(-1deg);
+  padding: 1em;
+  margin: 1em auto;
+}
+
+.swade-scifi-theme-core img {
+  border: none;
+  shape-margin: 1em;
+}
+
+.swade-scifi-theme-core .float-right {
+  margin-right: -2em;
+  margin-left: .5em;
+  float: right;
+}
+
+.swade-scifi-theme-core .float-left {
+  margin-left: -2em;
+  margin-right: .5em;
+  float: left;
+}
+
+.swade-scifi-theme-core .float-left:not(img),
+.swade-scifi-theme-core .float-right:not(img) {
+  width: calc(50% + 2em);
+}
+
+.swade-scifi-theme-core p.hanging-indent {
+  padding-left: 1ch;
+  text-indent: -1ch;
+}
+
+.swade-scifi-theme-core .left {
+  text-align: left;
+}
+
+.swade-scifi-theme-core .right {
+  text-align: right;
+}
+
+.swade-scifi-theme-core .centered {
+  text-align: center;
+}
+
+.swade-scifi-theme-core .western {
+  font-family: dead-saloon;
+  font-size: .9em;
+  color: var(--heading-color-dark);
+}
+
+.swade-scifi-theme-core .no-display {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.swade-scifi-theme-core .read-aloud {
+  color: var(--heading-color-dark);
+  font-style: italic;
+  margin-left: 2ch;
+}
+
+.swade-scifi-theme-core .gun-icon::before {
+  content: "\004C  ";
+  font-family: western-bullets;
+}
+
+.swade-scifi-theme-core .star-icon::before {
+  content: url("../assets/layout/badge-star.svg");
+  display: inline-block;
+  width: 2ch;
+  position: relative;
+  top: .35em;
+  margin-right: .5ch;
+}
+
+.swade-scifi-theme-core .chapter-heading {
+  font-size: .7em;
+  display: flex;
+  position: relative;
+  background-image: url("../assets/layout/chapter-title-background.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 54em;
+  margin: -1em auto -1em auto;
+  height: 32em;
+}
+
+.swade-scifi-theme-core .chapter-heading h1 {
+  font-size: 4.7em;
+  margin: 0;
+  margin-bottom: .3em;
+  line-height: 1em;
+  width: 100%;
+  align-self: center;
+  color: var(--heading-color-dark);
+}
+
+.swade-scifi-theme-core .chapter-heading h1::before,
+.swade-scifi-theme-core .chapter-heading h1::after {
+  content: none;
+}
+
+.swade-scifi-theme-core .chapter-heading h1.smaller {
+  font-size: 4em;
+}
+
+.swade-scifi-theme-core .chapter-heading h1.smaller-2 {
+  font-size: 3em;
+}
+
+.swade-scifi-theme-core .chapter-heading .chapter-number {
+  position: absolute;
+  right: 1.5em;
+  top: .7em;
+  text-transform: uppercase;
+  font-family: dead-saloon, serif;
+  font-size: 3.4em;
+  transform: rotate(9.5deg);
+  color: black;
+}
+
+.swade-scifi-theme-core .chapter-heading .chapter-number .chapter-label {
+  position: absolute;
+  top: -.7em;
+  left: 50%;
+  content: "Chapter";
+  text-transform: uppercase;
+  font-size: .5em;
+  font-weight: bold;
+  letter-spacing: .25ch;
+  transform: translate(-50%);
+  word-break: keep-all;
+}
+
+.swade-scifi-theme-core .chapter-heading .subtitle {
+  font-family: "ChickenScratch";
+  font-size: 1.1em;
+  position: absolute;
+  bottom: 4em;
+  right: 5.2em;
+  text-align: right;
+  color: var(--heading-color-light);
+  text-transform: uppercase;
+}
+
+.swade-scifi-theme-core h1,
+.swade-scifi-theme-core h2 {
+  border: none;
+}
+
+.swade-scifi-theme-core h1 {
+  font-family: dead-saloon, serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .1ch;
+  font-size: 2.1em;
+}
+
+.swade-scifi-theme-core h1.wide {
+  color: var(--heading-color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1em;
+  margin-bottom: .5em;
+}
+
+.swade-scifi-theme-core h1.wide::before, .swade-scifi-theme-core h1.wide::after {
+  content: " ";
+  background-image: url(../assets/layout/swade-scifi-theme-h1-decoration.svg);
+  background-repeat: no-repeat;
+  background-position-y: .3em;
+  display: inline-block;
+  min-width: 4em;
+  height: 1.2em;
+  color: currentColor;
+}
+
+.swade-scifi-theme-core h1.wide::before {
+  margin-right: 1ch;
+}
+
+.swade-scifi-theme-core h1.wide::after {
+  transform: scaleX(-1);
+  margin-left: 1ch;
+}
+
+.swade-scifi-theme-core h1.narrow {
+  background-image: url("../assets/layout/h1-background.webp");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: max-content;
+  padding: 0 1em;
+  min-width: 11.4em;
+  height: 2.2em;
+  line-height: 2em;
+  color: var(--heading-color-cream);
+  margin: auto;
+}
+
+.swade-scifi-theme-core h2 {
+  font-family: dead-saloon, serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .1ch;
+  color: var(--heading-color-light);
+  font-size: 1.6em;
+  border-bottom: .05em solid currentColor;
+  padding-bottom: .2em;
+  margin-bottom: .2em;
+  margin-top: .7em;
+}
+
+.swade-scifi-theme-core h2.no-underline {
+  border-bottom: none;
+  padding-bottom: none;
+}
+
+.swade-scifi-theme-core h3 {
+  font-family: dead-saloon, serif;
+  text-transform: uppercase;
+  letter-spacing: .1ch;
+  color: var(--heading-color-light);
+  font-size: 1.25em;
+  margin-bottom: 0;
+  margin-top: .7em;
+  border: initial;
+}
+
+.swade-scifi-theme-core ul, .swade-scifi-theme-core ol {
+  padding-left: 1.5ch;
+  margin-top: 0;
+}
+
+.swade-scifi-theme-core ul {
+  list-style: none;
+}
+
+.swade-scifi-theme-core li {
+  padding: 0;
+  padding-left: 1ch;
+}
+
+.swade-scifi-theme-core li::marker {
+  font-size: 1em;
+  content: "\25A0";
+  color: var(--heading-color-light);
+}
+
+.swade-scifi-theme-core li ul li {
+  text-indent: 2ch;
+}
+
+.swade-scifi-theme-core li ul li::marker {
+  content: "\2022";
+}
+
+.swade-scifi-theme-core li.gun-icon::before,
+.swade-scifi-theme-core li.star-icon::before {
+  content: none;
+}
+
+.swade-scifi-theme-core ul li.gun-icon::marker {
+  content: "\004C";
+  font-family: western-bullets;
+}
+
+.swade-scifi-theme-core ul li.star-icon {
+  position: relative;
+}
+
+.swade-scifi-theme-core ul li.star-icon::marker {
+  content: initial;
+}
+
+.swade-scifi-theme-core ul li.star-icon::before {
+  content: url("../assets/layout/badge-star.svg");
+  display: inline-block;
+  width: 2ch;
+  position: absolute;
+  top: .35em;
+  margin-right: .5ch;
+  left: -1.7ch;
+}
+
+.swade-scifi-theme-core .list-heading {
+  font-size: .9em;
+  text-transform: uppercase;
+  font-family: "Roboto Slab";
+  font-weight: bold;
+}
+
+.swade-scifi-theme-core table {
+  background: none;
+  border: none;
+}
+
+.swade-scifi-theme-core table.wide {
+  font-size: .8em;
+  margin-left: -2.5em;
+  margin-right: -2.5em;
+  width: calc(100% + 5em);
+}
+
+.swade-scifi-theme-core tr:nth-of-type(odd) {
+  background-color: none;
+}
+
+.swade-scifi-theme-core tr:nth-of-type(even) {
+  background-color: #e7d4b8;
+}
+
+.swade-scifi-theme-core .table-note td {
+  padding: 0em .3em .6em 2ch;
+}
+
+.swade-scifi-theme-core td:not([colspan]) {
+  max-width: 20ch;
+}
+
+.swade-scifi-theme-core th.dark {
+  color: white;
+  background-color: var(--heading-color-dark);
+}
+
+.swade-scifi-theme-core th h2 {
+  font-size: 1em;
+  border-bottom: none;
+  color: white;
+  background: linear-gradient(to left, #240a0d, 12.5%, #8c2928, 87.5%, #240a0d);
+  margin: -.25em 0;
+  padding: .2em 0 .3em 0;
+  line-height: 1.5em;
+  height: 100%;
+}
+
+.swade-scifi-theme-core blockquote {
+  font-family: "Western Bang Bang";
+  border: none;
+  width: 60%;
+  margin: auto;
+}
+
+.swade-scifi-theme-core blockquote p {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+}
+
+.swade-scifi-theme-core blockquote p:before {
+  content: open-quote;
+}
+
+.swade-scifi-theme-core blockquote p:after {
+  content: close-quote;
+}
+
+.swade-scifi-theme-core blockquote cite {
+  text-align: right;
+  font-size: 1.2em;
+  display: block;
+}
+
+.swade-scifi-theme-core blockquote cite:before {
+  content: "\2014";
+}
+
+.swade-scifi-theme-core a.entity-link, .swade-scifi-theme-core a.content-link, .swade-scifi-theme-core a.inline-roll {
+  background: initial;
+  border: initial;
+  white-space: initial;
+  word-break: initial;
+  padding: initial;
+  margin: initial;
+  color: var(--heading-color-dark);
+  text-decoration: underline;
+}
+
+.swade-scifi-theme-core a.entity-link.broken, .swade-scifi-theme-core a.content-link.broken, .swade-scifi-theme-core a.inline-roll.broken {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: text;
+}
+
+.swade-scifi-theme-core a.entity-link:hover, .swade-scifi-theme-core a.content-link:hover, .swade-scifi-theme-core a.inline-roll:hover {
+  text-shadow: 0 0 0.2em var(--heading-color-dark);
+}
+
+.swade-scifi-theme-core a.entity-link.broken:hover, .swade-scifi-theme-core a.content-link.broken:hover, .swade-scifi-theme-core a.inline-roll.broken:hover {
+  text-shadow: none;
+}
+
+.swade-scifi-theme-core a.entity-link i.fas, .swade-scifi-theme-core a.content-link i.fas, .swade-scifi-theme-core a.inline-roll i.fas {
+  display: none;
+}
+
+.swade-scifi-theme-core figure.chapter-number {
+  margin: 1em;
+}
+
+.item .swade-scifi-theme-core {
+  padding: 1em;
+}
+
+.chat-message .swade-scifi-theme-core {
+  padding: .3em;
+}
+
+.swade-scifi-theme-compendium .window-content {
+  background-image: url("../assets/layout/leather.webp");
+  padding: 0;
+}
+
+.swade-scifi-theme-compendium .window-content .header.title {
+  color: var(--heading-color-cream);
+  background-image: url("../assets/layout/leather-strip.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: left;
+  padding-left: 1rem;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.7);
+}
+
+.swade-scifi-theme-compendium .window-content .content {
+  background-image: url("../assets/layout/light-parchment-paper-no-border-seamless.webp");
+  background-size: 100% 100%;
+  padding: 1rem 1rem 1rem 1rem;
+  box-shadow: 3px 3px 10px 1px #333;
+  margin: 1rem;
+  height: auto;
+  font-size: 16px;
+}
+
+.swade-scifi-theme-compendium .window-content div.header input {
+  background: antiquewhite;
+  box-shadow: inset 0px 0px 3px black;
+  margin-right: 1em;
+  margin-top: .5em;
+}
+
+.swade-scifi-theme-compendium .window-content div.header.search {
+  padding-top: 0.1rem;
+  padding-right: 0.1rem;
+}
+
+.swade-scifi-theme-compendium .window-content .content .category h2.category-header {
+  background-image: url("../assets/layout/h1-background.webp");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: max-content;
+  padding: 0 1em;
+  min-width: 11.4em;
+  height: 2.2em;
+  line-height: 2em;
+  color: var(--heading-color-cream);
+  margin: auto;
+  text-align: center;
+}
+
+.swade-scifi-theme-compendium .window-content .content .journal .journal-heading,
+.swade-scifi-theme-compendium .window-content .content .category h3.group-header {
+  font-family: dead-saloon, serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .1ch;
+  color: var(--heading-color-light);
+  font-size: 1.6em;
+  border-bottom: .05em solid currentColor;
+  padding-bottom: .2em;
+  margin-bottom: .2em;
+  margin-top: .7em;
+}
+
+.swade-scifi-theme-sheet {
+  background-image: url("../assets/layout/leather.webp");
+}
+
+.swade-scifi-theme-sheet .sheet-body {
+  background-image: url("../assets/layout/light-parchment-paper.webp");
+  background-size: 100% 100%;
+  padding: 1em 1.5em;
+}
+
+.swade-scifi-theme-sheet .limited .sheet-body {
+  padding: 1.5em 1.75em 0.5em 1.75em;
+}
+
+.swade-scifi-theme-sheet .charname-container,
+.swade-scifi-theme-sheet .conviction-enabled .charname-container {
+  grid-column: 3 / 9;
+}
+
+.swade-scifi-theme-sheet .gu-1 {
+  display: block;
+  grid-row: 1 / 4;
+  height: 400%;
+  grid-column: 1 / 9;
+  background-image: url("../assets/layout/old-paper.webp");
+  background-size: 100% 100%;
+  margin: -1em;
+  z-index: -1;
+}
+
+.swade-scifi-theme-sheet .race {
+  grid-column: 3 / 6;
+}
+
+.swade-scifi-theme-sheet .archetype {
+  grid-column: 3 / 6;
+}
+
+.swade-scifi-theme-sheet .rank {
+  grid-column: 6 / 9;
+}
+
+.swade-scifi-theme-sheet .advances {
+  grid-column: 6 / 9;
+}
+
+.swade-scifi-theme-sheet .tab {
+  padding: 1em 1em 0em 1em;
+}
+
+.swade-scifi-theme-sheet .window-content {
+  padding: 16px;
+}
+
+.swade-scifi-theme-sheet .advances input[type=number] {
+  color: var(--heading-color-cream);
+}
+
+.swade-scifi-theme-sheet .character-detail,
+.swade-scifi-theme-sheet .character-detail input[type=text],
+.swade-scifi-theme-sheet .character-detail input[type=number],
+.swade-scifi-theme-sheet .character-detail label {
+  font-family: var(--section-header-font);
+  color: var(--heading-color-dark);
+  font-size: 1.1em;
+  border: none;
+  text-align: center;
+}
+
+.swade-scifi-theme-sheet .charname,
+.swade-scifi-theme-sheet .character-detail input,
+.swade-scifi-theme-sheet .character-detail label {
+  text-shadow: var(--header-text-shadow);
+}
+
+.swade-scifi-theme-sheet .charname {
+  position: relative;
+  left: -8px;
+  font-family: dead-saloon;
+  color: var(--heading-color-dark);
+  padding-left: 1ch;
+  padding-bottom: .3em;
+  text-align: center;
+}
+
+.swade-scifi-theme-sheet .sheet-header-official div:first-child label {
+  display: flex;
+}
+
+.swade-scifi-theme-sheet .charname-container:before,
+.swade-scifi-theme-sheet .charname-container::after {
+  content: url("../assets/layout/swade-scifi-theme-h1-decoration.svg");
+  display: inline-block;
+  width: 10em;
+  align-self: center;
+  margin-right: 1ch;
+  margin-left: 1ch;
+  position: relative;
+  top: .15em;
+  color: currentColor;
+  filter: drop-shadow(var(--header-text-shadow));
+}
+
+.swade-scifi-theme-sheet .charname-container::after {
+  transform: scaleX(-1);
+}
+
+.swade-scifi-theme-sheet input[type].conviction-counter:active,
+.swade-scifi-theme-sheet input[type].conviction-counter:hover,
+.swade-scifi-theme-sheet input[type].conviction-counter:focus,
+.swade-scifi-theme-sheet .character-detail input:active,
+.swade-scifi-theme-sheet .character-detail input:hover,
+.swade-scifi-theme-sheet .character-detail input:focus,
+.swade-scifi-theme-sheet input.charname:active,
+.swade-scifi-theme-sheet input.charname:hover,
+.swade-scifi-theme-sheet input.charname:focus {
+  box-shadow: none;
+  border-bottom: dashed 1px var(--heading-color-dark);
+}
+
+.swade-scifi-theme-sheet .branding {
+  grid-row: 1 / 4;
+  grid-column: 9 / 13;
+  flex-direction: column;
+  margin: -.5em 0em;
+  align-items: center;
+}
+
+.swade-scifi-theme-sheet #peg-logo {
+  display: none;
+}
+
+.swade-scifi-theme-sheet .branding {
+  background-image: url("../assets/swade-scifi-theme-logo.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  min-width: 8em;
+}
+
+.swade-scifi-theme-sheet :not(.conviction-enabled) .branding {
+  transform: scale(0.7);
+}
+
+.swade-scifi-theme-sheet #conviction {
+  --color-initial: rgba(50, 13, 0, 1);
+  --color-high: rgba(142, 45, 41, 0.7);
+  --color-low: rgba(50, 13, 0, 0);
+}
+
+.swade-scifi-theme-sheet .conviction-enabled .branding {
+  grid-row: 1;
+  grid-column: 9 / 13;
+  flex-direction: row;
+  margin: 0;
+  margin-top: -1em;
+  filter: drop-shadow(0.1em 0.1em 0.2em black);
+}
+
+.swade-scifi-theme-sheet input[type].conviction-counter {
+  background: none;
+  font-size: 1.5em;
+}
+
+.swade-scifi-theme-sheet .conviction-toggle {
+  font-family: var(--section-header-font);
+}
+
+.swade-scifi-theme-sheet .conviction-enabled #conviction,
+.swade-scifi-theme-sheet .conviction-enabled .gu-2 {
+  grid-row: 2 / 4;
+  grid-column: 9 / 13;
+  font-family: var(--section-header-font);
+  color: var(--heading-color-dark);
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.swade-scifi-theme-sheet .conviction-enabled .gu-2 {
+  display: block;
+  background-image: url("../assets/layout/ripped_paper.webp");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -1.2em 1.5em;
+  transform: rotate(3deg);
+  z-index: -1;
+}
+
+.swade-scifi-theme-sheet .tabs .item {
+  font-family: dead-saloon;
+  color: var(--heading-color-dark);
+  background-image: url("../assets/layout/h1-background.webp");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: .3em 1ch 0.5em 1ch;
+  box-shadow: none;
+  filter: drop-shadow(0 0 0.1em black);
+  border-radius: 5px;
+  font-size: 1.5em;
+  transition: transform 1s, filter .5s;
+  text-shadow: 0 0 0.8em var(--heading-color-cream), 0 0 0.8em var(--heading-color-cream), 0 0 0.8em var(--heading-color-cream);
+}
+
+.swade-scifi-theme-sheet .tabs .item.active {
+  filter: drop-shadow(0 0 0.3em black);
+  color: var(--heading-color-cream);
+  text-shadow: 0 0 0.5em var(--heading-color-dark), 0 0 1em var(--heading-color-dark);
+}
+
+.swade-scifi-theme-sheet .note-box {
+  grid-template-rows: 2.5em 1fr 2.5em;
+  filter: drop-shadow(0.1em 0.1em 0.3em #00000066);
+  margin-bottom: .3em;
+}
+
+.swade-scifi-theme-sheet .note-box::before {
+  content: " ";
+  grid-column: 1;
+  grid-row: 1 / -1;
+  background-image: url("../assets/layout/parchment-sidebar.webp");
+  background-color: var(--note-box-background);
+  background-blend-mode: luminosity;
+  background-size: 100% auto;
+  background-position: top;
+  background-repeat: repeat-y;
+  clip-path: url(#swade-scifi-theme-sidebar-clip);
+  z-index: -1;
+}
+
+.swade-scifi-theme-sheet .note-box .note-header,
+.swade-scifi-theme-sheet .note-box .note-footer {
+  background-image: url("../assets/layout/nail-heads.webp"), url("../assets/layout/nail-heads.webp");
+  background-position: calc(0% - 2em), calc(100% + 1.8em);
+  background-size: 4em, 4em;
+  background-repeat: no-repeat;
+  aspect-ratio: initial;
+}
+
+.swade-scifi-theme-sheet .note-box .note-main {
+  background-image: none;
+}
+
+.swade-scifi-theme-sheet .skills {
+  margin-right: .25em;
+}
+
+.swade-scifi-theme-sheet .quickaccess {
+  margin-left: .25em;
+}
+
+.swade-scifi-theme-sheet .description .char-img-container {
+  background-image: url("../assets/layout/paper-grunge.webp");
+  transform: rotate(-1deg);
+}
+
+.swade-scifi-theme-sheet .description .advances .editor,
+.swade-scifi-theme-sheet .description .biography .editor {
+  border: 1px dashed var(--heading-color-dark);
+}
+
+.swade-scifi-theme-sheet .window-header {
+  border: none;
+  color: var(--heading-color-cream);
+  font-family: "Book Antiqua";
+  background-color: #000;
+}
+/*# sourceMappingURL=swade-scifi-theme.css.map */

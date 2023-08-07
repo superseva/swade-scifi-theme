@@ -1,0 +1,29 @@
+@use "sass:color"; 
+
+.swade-scifi-theme-wrapper, .swade-scifi-theme-core, .swade-scifi-theme-sheet, .swade-scifi-theme-compendium {    
+	--heading-color-dark: #000f32;
+	--heading-color-light: #29588e;
+	--heading-color-cream:  #56e0ff;
+
+	--content-background-image: none;
+	--section-header-color: var(--heading-color-light);
+	--section-header-size: 1.5em;
+	--section-header-font: dead-saloon, serif;
+	--default-font: "Book Antiqua";
+	--default-font-size: 1.03em;
+	--input-box-shadow: 0 0 5px var(--heading-color-light);
+	--input-text-shadow: 0 0 10px var(--heading-color-light);
+	--header-text-shadow: 0 0 0.2em #ffde9ac4;
+
+    // conviction
+	--color-initial: rgb(0, 31, 50);
+    --color-high: rgba(41, 108, 142, 0.7);
+    --color-low: rgba(50, 13, 0, 0);    
+ 
+    --note-box-background: #ffffff5e; 
+
+	--ghostly-white: #ffffff4a;
+    --half-black: #00000080;
+    --mostly-black: #000000B3;    
+
+}
